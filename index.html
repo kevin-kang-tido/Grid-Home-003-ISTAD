@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./img/five.jpg" type="image/x-icon">
+</head>
+<body>
+    <!-- nab bar -->
+    <header>
+        <nav class="nav_bar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/564x/26/5b/11/265b1184cdfc341d454d2e9d1e94795f.jpg" alt="logo_img">
+            </div>
+            <div class="search_bar">
+                <input type="search" name="" id="" placeholder="   search here....">
+            </div>
+            <div class="btn_login">
+                <button>Login</button>
+            </div>
+        </nav>
+    </header>
+    <!-- body -->
+    <main>
+        <section class="container">
+            <div class="item item_1"> 
+                <img src="./img/two.jpg" alt="img">
+            </div>
+            <div class="item item_2">
+                <img src="./img/three.jpg" alt="img">
+
+            </div>
+            <div class="item item_3">
+                <img src=".//img/five.jpg" alt="img">
+            </div>
+            <div class="item item_4">
+                <img src="./img/naru_1.jpg" alt="img">
+                
+            </div>
+            <div class="item item_5">
+                <img src="./img/naru_2.jpg" alt="img">
+            </div>
+            <div class="item item_6">
+                <img src="./img/naru_3.jpg" alt="img">
+            </div>
+            <div class="item item_7">
+                <img src="./img/naru_4.jpg" alt="img">
+            </div>
+            <div class="item item_8">
+                <img src="./img/naru_5.jpg" alt="img">
+            </div>
+            <div class="item item_9">
+                <img src="./img/naru_6.jpg" alt="img">
+            </div>
+            <div class="item item_10">
+                <img src="./img/naru_7.jpg" alt="img">
+            </div>
+            <div class="item item_11">
+                <img src="./img/naru_8.jpg" alt="img">
+            </div>
+        </section>
+        <div class="overlay" id="imagePreview">
+            <span class="close-icon" onclick="closePreview()">&times;</span>
+            <img class="preview-image" id="previewImage" src="" alt="Preview">
+        </div>
+    </main>
+    <!-- footer -->
+    <footer></footer>
+    
+</body>
+<script>
+    const items = document.querySelectorAll('.item');
+    items.forEach(item => {
+        item.addEventListener('click', function() {
+            const imagePath = this.querySelector('img').src;
+            openPreview(imagePath);
+        });
+    });
+    function openPreview(imagePath) {
+        const previewOverlay = document.getElementById('imagePreview');
+        const previewImage = document.getElementById('previewImage');
+        previewImage.src = imagePath;
+        previewOverlay.style.display = 'flex';
+    }
+    function closePreview() {
+        const previewOverlay = document.getElementById('imagePreview');
+        previewOverlay.style.display = 'none';
+    }
+</script>
+</html>
